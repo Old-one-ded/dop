@@ -1,6 +1,5 @@
 package ru.smak.chat
 
-import androidx.compose.foundation.ScrollState
 import androidx.compose.foundation.ScrollbarAdapter
 import androidx.compose.foundation.lazy.LazyListState
 import androidx.compose.runtime.getValue
@@ -17,18 +16,18 @@ class MainViewModel {
     val scrollState = LazyListState(0)
     val sbAdapter = ScrollbarAdapter(scrollState)
 
-    //private val c: Client = Client()
+    private val c: Client = Client()
 
     fun send() {
-        //c.send(userInput)
-        messages.add(userInput)
+        c.send(userInput)
         userInput = ""
     }
 
     init{
-//        c.addGotServerDataListener {
-//            messages.add(it)
-//        }
+        c.addGotServerDataListener {
+            messages.add(it)
+        }
+        c.start()
     }
 
 }

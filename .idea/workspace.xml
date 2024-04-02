@@ -5,10 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e400de73-d884-464f-982f-87bf746b1b14" name="Changes" comment="Initial Commit">
-      <change afterPath="$PROJECT_DIR$/Client/gradlew" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Client/gradlew.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Client/src/main/kotlin/ru/smak/chat/MainViewModel.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Server/src/main/kotlin/ru/smak/chat/net/ConnectedClient.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/main/kotlin/ru/smak/chat/MainViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/main/kotlin/ru/smak/chat/MainViewModel.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,10 +88,11 @@
       <recent name="ru.smak.chat" />
     </key>
   </component>
-  <component name="RunManager" selected="Kotlin.MainKt">
-    <configuration name="MainKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Kotlin.Client">
+    <configuration name="Client" type="JetRunConfigurationType" singleton="false" temporary="true">
       <option name="MAIN_CLASS_NAME" value="ru.smak.chat.MainKt" />
       <module name="Client.main" />
+      <shortenClasspath name="NONE" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -107,9 +105,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Kotlin.Client" />
+      <item itemvalue="Kotlin.Server" />
+    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Kotlin.MainKt" />
+        <item itemvalue="Kotlin.Client" />
         <item itemvalue="Kotlin.Server" />
       </list>
     </recent_temporary>
@@ -155,7 +157,23 @@
       <option name="project" value="LOCAL" />
       <updated>1712094406111</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Initial Commit">
+      <option name="closed" value="true" />
+      <created>1712094506773</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1712094506773</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Initial Commit">
+      <option name="closed" value="true" />
+      <created>1712094512010</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1712094512010</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
