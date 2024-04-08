@@ -24,14 +24,18 @@ class ConnectedClient(socket: Socket) {
             clients.remove(this)
         }
         communicator.doMainRoutine(::process)
+        send(Command.SYSTEM_MESSAGE, "Введите своё имя:")
     }
+
+    private fun send(cmd: Command, data: String) =
+        communicator.send("$cmd:$data")
 
     private fun process(data: String) = sendToAll(data)
 
     private fun sendToAll(data: String) = clients.apply {
         removeIf { !it.isAlive }
         forEach {
-            it.communicator.send(data)
+            it.send(Command.USER_MESSAGE, data)
         }
     }
 

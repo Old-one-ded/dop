@@ -9,8 +9,8 @@ import androidx.compose.runtime.setValue
 import ru.smak.chat.net.Client
 
 class MainViewModel {
-    val messages = mutableStateListOf("Пользователь1: Привет!", "Пользователь2: Тоже привет!")
-    var serverMessage by mutableStateOf("Сообщение от Сервера")
+    val messages = mutableStateListOf<String>()
+    var serverMessage by mutableStateOf("")
     var userInput by mutableStateOf("")
 
     val scrollState = LazyListState(0)
