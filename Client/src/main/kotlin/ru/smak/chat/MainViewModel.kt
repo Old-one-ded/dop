@@ -24,8 +24,12 @@ class MainViewModel {
     }
 
     init{
-        c.addGotServerDataListener {
-            messages.add(it)
+        c.addGotServerDataListener { msg, loc ->
+            when(loc){
+                OutputLocation.USER_MESSAGE_LIST -> messages.add(msg)
+                OutputLocation.SYSTEM_TEXT -> serverMessage = msg
+            }
+
         }
         c.start()
     }

@@ -4,15 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e400de73-d884-464f-982f-87bf746b1b14" name="Changes" comment="Чат с граф. интерфейсом">
-      <change afterPath="$PROJECT_DIR$/.idea/Chat104-2.0.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Client/src/main/kotlin/ru/smak/chat/OutputLocation.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Communicator/src/main/kotlin/ru/smak/chat/net/Commands.kt" afterDir="false" />
+    <list default="true" id="e400de73-d884-464f-982f-87bf746b1b14" name="Changes" comment="От 08.04">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Client/src/main/kotlin/ru/smak/chat/MainViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/main/kotlin/ru/smak/chat/MainViewModel.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/main/kotlin/ru/smak/chat/net/Client.kt" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/main/kotlin/ru/smak/chat/net/Client.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/src/main/kotlin/ru/smak/chat/net/ConnectedClient.kt" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/main/kotlin/ru/smak/chat/net/ConnectedClient.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -214,13 +208,22 @@
       <option name="project" value="LOCAL" />
       <updated>1712094799480</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="От 08.04">
+      <option name="closed" value="true" />
+      <created>1712560087138</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1712560087138</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Initial Commit" />
     <MESSAGE value="Чат с граф. интерфейсом" />
-    <option name="LAST_COMMIT_MESSAGE" value="Чат с граф. интерфейсом" />
+    <MESSAGE value="От 08.04" />
+    <option name="LAST_COMMIT_MESSAGE" value="От 08.04" />
   </component>
 </project>
