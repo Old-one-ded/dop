@@ -1,11 +1,6 @@
 package ru.smak.chat.net
 
-import ru.smak.chat.net.Communicator
-import java.io.BufferedReader
-import java.io.InputStreamReader
-import java.io.PrintWriter
 import java.net.Socket
-import kotlin.concurrent.thread
 
 class ConnectedClient(socket: Socket) {
 
@@ -14,7 +9,6 @@ class ConnectedClient(socket: Socket) {
     }
 
     private val communicator = Communicator(socket)
-    private var name: String? = null
 
     val isAlive: Boolean
         get() = !communicator.isStopped
@@ -24,36 +18,42 @@ class ConnectedClient(socket: Socket) {
         communicator.addOnStopListener {
             clients.remove(this)
         }
-        communicator.doMainRoutine(::process)
-        send(Command.SYSTEM_MESSAGE, "Введите своё имя:")
+        communicator.doMainRoutine(::send)
     }
 
-    private fun send(cmd: Command, data: String) =
-        communicator.send("$cmd:$data")
+    private fun send(data: String) =
+        communicator.send(addMatrices(matrix1,matrix2))
 
-    private fun process(data: String){
-        name?.let { cName ->
-            sendToAll("$name: $data")
-        } ?: run {
-            if (clients.firstOrNull { it.name?.uppercase() == data.uppercase() } != null)
-                send(Command.SYSTEM_MESSAGE,"Выбранное имя занято. Введите другое:")
-            else {
-                if (!data.matches(Regex("^[A-ZА-Я][\\w_-]+$", RegexOption.IGNORE_CASE)))
-                    send(Command.SYSTEM_MESSAGE, "Имя должно содержать только буквы и цифры")
-                else {
-                    name = data
-                    send(Command.SYSTEM_MESSAGE, "Введите своё сообщение:")
-                    sendToAll("К нам присоединился $name!")
-                }
+    private val matrix1 = listOf(
+        listOf(5, 12, 7),
+        listOf(14, 3, 6),
+        listOf(9, 8, 10)
+    )
+
+    private val matrix2 = listOf(
+        listOf(2, 15, 9),
+        listOf(11, 4, 13),
+        listOf(6, 1, 8)
+    )
+    fun addMatrices(a: List<List<Int>>, b: List<List<Int>>): String {
+        val result = mutableListOf<MutableList<Int>>()
+
+        // Сложение матриц
+        for (i in a.indices) {
+            val row = mutableListOf<Int>()
+            for (j in a[i].indices) {
+                row.add(a[i][j] + b[i][j])
             }
+            result.add(row)
         }
-    }
 
-    private fun sendToAll(data: String) = clients.apply {
-        removeIf { !it.isAlive }
-        forEach {
-            it.send(Command.USER_MESSAGE, data)
-        }
+        // Определение максимальной длины числа для форматирования
+        val maxLength = result.flatten().maxOf { it.toString().length }
+
+        // Построение строки с результатом сложения
+        return result.joinToString("\n") { row ->
+            row.joinToString(" ") { it.toString().padStart(maxLength) }
+        } + "\n"
     }
 
     fun stop() = communicator.stop()

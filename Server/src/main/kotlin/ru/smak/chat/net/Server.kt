@@ -25,4 +25,5 @@ class Server(port: Int = 5104) {
     fun stop(){
         stop = true
     }
+
 }

@@ -43,19 +43,10 @@ fun App() {
                 VerticalScrollbar(mvm.sbAdapter)
             }
             Text(mvm.serverMessage)
-            Row(Modifier.fillMaxWidth(),
-                verticalAlignment = Alignment.CenterVertically) {
-                OutlinedTextField(
-                    value = mvm.userInput, onValueChange = {
-                        mvm.userInput = it
-                    },
-                    modifier = Modifier.weight(1f)
-                )
-                Button(onClick = {
-                    mvm.send()
-                }){
-                    Text("Отправить")
-                }
+            Button(onClick = {
+                mvm.send()
+            }){
+                Text("Сложить Матрицы")
             }
         }
     }

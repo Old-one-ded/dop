@@ -22,15 +22,9 @@ class Client(host: String = "localhost", port: Int = 5104) {
     }
 
     private fun process(data: String?) = data?.let{ d ->
-        d.split(":", limit = 2).let{ dt ->
-            gotServerDataListeners.forEach {
-                it(dt[1], when(Command.valueOf(dt[0])){
-                    Command.USER_MESSAGE -> OutputLocation.USER_MESSAGE_LIST
-                    Command.SYSTEM_MESSAGE -> OutputLocation.SYSTEM_TEXT
-                })
-            }
+        gotServerDataListeners.forEach {
+            it(data, OutputLocation.USER_MESSAGE_LIST)
         }
-
     }
 
     fun send(data: String) = communicator.send(data)
